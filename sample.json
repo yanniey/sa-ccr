@@ -1,0 +1,36 @@
+{
+"name": "Derivatives Data",
+"date": "2017-01-17T00:00:00Z",
+"data": [
+{
+"id": "swap_1",
+"date": "2017-01-17T00:00:00Z",
+"asset_class": "ir",
+"currency_code": "USD",
+"end_date": "2019-01-17T00:00:00Z",
+"mtm_dirty": -1500,
+"notional_amount": 10000,
+"payment_type": "fixed",
+"receive_type": "floating",
+"start_date": "2017-01-10T00:00:00Z",
+"type": "vanilla_swap",
+"trade_date": "2017-01-10T00:00:00Z",
+"value_date": "2017-01-16T00:00:00Z"
+},
+{
+"id": "swap_2",
+"date": "2017-01-17T00:00:00Z",
+"asset_class": "ir",
+"currency_code": "GBP",
+"end_date": "2019-01-17T00:00:00Z",
+"mtm_dirty": 1400,
+"notional_amount": 10500,
+"payment_type": "floating",
+"receive_type": "floating",
+"start_date": "2017-01-10T00:00:00Z",
+"type": "vanilla_swap",
+"trade_date": "2017-01-10T00:00:00Z",
+"value_date": "2017-01-16T00:00:00Z"
+}
+]
+}
