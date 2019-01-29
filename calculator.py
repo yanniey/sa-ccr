@@ -78,7 +78,7 @@ for index, row in df.iterrows():
 		elif df["payment_type"][index] == "floating" and df["receive_type"][index] == "fixed":
 			supervisory_delta.append(-1)
 		else:
-			# when it's basis rate swap (receive & pay floating), or receive & pay fixed
+			# when it's basis rate swap (receive & pay floating) - I'm not sure about this one
 			supervisory_delta.append(1)
 	elif df["type"][index] == "swaption":
 		# following Example 1 in the reg text
@@ -104,6 +104,7 @@ for i in currency:
 	D2 = df.loc[(df["currency_code"] == i) & (df["time_bucket"]==2),"adjusted_notional"]
 	D3 = df.loc[(df["currency_code"] == i) & (df["time_bucket"]==3),"adjusted_notional"]
 
+	# effective notional for each time bucket = adjusted notional * supervisory delta
 	D1 = 0 if D1.empty else D1.iloc[0] * df.loc[(df["currency_code"] == i) & (df["time_bucket"]==1),"supervisory_delta"].iloc[0]
 	D2 = 0 if D2.empty else D2.iloc[0] * df.loc[(df["currency_code"] == i) & (df["time_bucket"]==2),"supervisory_delta"].iloc[0]
 	D3 = 0 if D3.empty else D3.iloc[0] * df.loc[(df["currency_code"] == i) & (df["time_bucket"]==3),"supervisory_delta"].iloc[0]
